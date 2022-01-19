@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Mountain-Pass_-Peaceful-Adventure-Game-Music-by-HeatleyBros.ogg-e95b5e88972f3ecf918f470086b3a472.oggstr"
+
+[deps]
+
+source_file="res://Musics/Mountain-Pass_-Peaceful-Adventure-Game-Music-by-HeatleyBros.ogg"
+dest_files=[ "res://.import/Mountain-Pass_-Peaceful-Adventure-Game-Music-by-HeatleyBros.ogg-e95b5e88972f3ecf918f470086b3a472.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

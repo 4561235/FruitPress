@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/ammo_added_effect.ogg-a7c911c6bab43fb81716dc67de8bfff4.oggstr"
+
+[deps]
+
+source_file="res://Scenes/DefaultWorld/Weapons/Pistol/Interface/AmmoCharger/ammo_added_effect.ogg"
+dest_files=[ "res://.import/ammo_added_effect.ogg-a7c911c6bab43fb81716dc67de8bfff4.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

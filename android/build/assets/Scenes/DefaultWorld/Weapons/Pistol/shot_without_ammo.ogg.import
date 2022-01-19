@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/shot_without_ammo.ogg-4d588be809d84a63682937e7d44fe5dd.oggstr"
+
+[deps]
+
+source_file="res://Scenes/DefaultWorld/Weapons/Pistol/shot_without_ammo.ogg"
+dest_files=[ "res://.import/shot_without_ammo.ogg-4d588be809d84a63682937e7d44fe5dd.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

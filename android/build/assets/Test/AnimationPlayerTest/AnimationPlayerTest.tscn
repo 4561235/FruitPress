@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://SVG/Logo (copie).svg" type="Texture" id=1]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Nouvelle animation"
+
+[node name="AnimationPlayerTest" type="Node2D"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+"anims/Nouvelle animation" = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 412.37, 761.809 )
+texture = ExtResource( 1 )

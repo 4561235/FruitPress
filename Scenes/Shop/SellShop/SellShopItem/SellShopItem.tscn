@@ -1,0 +1,197 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://GUI/GuiPanel/GuiPanel.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/DefaultWorld/Hud/JuiceBottleManager/JuiceBottle/bottle.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/DefaultWorld/Hud/JuiceBottleManager/JuiceBottle/bottleProgress.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/DefaultWorld/Fruits/Apple/apple.png" type="Texture" id=4]
+[ext_resource path="res://Fonts/m5x7.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://Scenes/Shop/SellShop/SellShopItem/SellShopItem.gd" type="Script" id=6]
+[ext_resource path="res://Scenes/Shop/WeaponShop/WeaponShopItem/coin.png" type="Texture" id=7]
+[ext_resource path="res://GUI/GuiButton/GuiButton.tscn" type="PackedScene" id=11]
+[ext_resource path="res://GUI/GuiSlider/GuiSlider.tscn" type="PackedScene" id=12]
+
+[sub_resource type="DynamicFont" id=1]
+size = 70
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 55
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 80
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 5 )
+
+[node name="SellShopItem" type="Control"]
+margin_right = 587.0
+margin_bottom = 204.0
+rect_min_size = Vector2( 587, 204 )
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+title = "Apple"
+
+[node name="GuiPanel" parent="." instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 583.0
+margin_bottom = 203.0
+
+[node name="Fill" parent="GuiPanel" index="0"]
+margin_left = 9.0
+margin_right = -5.0
+
+[node name="Bottle" type="TextureRect" parent="GuiPanel"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 32.0
+margin_top = -78.5
+margin_right = 97.0
+margin_bottom = 78.5
+rect_scale = Vector2( 0.9, 0.9 )
+texture = ExtResource( 2 )
+
+[node name="Fill" type="TextureRect" parent="GuiPanel/Bottle"]
+self_modulate = Color( 0.819608, 0.0392157, 0.0392157, 1 )
+show_behind_parent = true
+margin_right = 65.0
+margin_bottom = 157.0
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Amount" type="Label" parent="GuiPanel/Bottle"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = 10.8889
+margin_top = -76.5
+margin_right = 88.8889
+margin_bottom = 75.5
+custom_fonts/font = SubResource( 1 )
+text = "x5"
+valign = 2
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="FruitSticker" type="TextureRect" parent="GuiPanel/Bottle"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0843
+margin_top = -5.91764
+margin_right = 116.916
+margin_bottom = 152.082
+grow_horizontal = 2
+grow_vertical = 2
+rect_scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="GuiPanel"]
+margin_left = 109.234
+margin_top = 17.5564
+margin_right = 226.234
+margin_bottom = 78.5564
+custom_fonts/font = SubResource( 1 )
+text = "Apple"
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Coin" type="TextureRect" parent="GuiPanel"]
+margin_left = 346.038
+margin_top = 40.128
+margin_right = 401.038
+margin_bottom = 95.128
+rect_scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Cost" type="Label" parent="GuiPanel/Coin"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -226.0
+margin_top = -31.5
+margin_right = -64.0
+margin_bottom = 29.5
+custom_fonts/font = SubResource( 2 )
+text = "50000"
+align = 2
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="SellButton" parent="." instance=ExtResource( 11 )]
+anchor_left = 1.0
+anchor_bottom = 0.0
+margin_left = -191.0
+margin_top = 24.0
+margin_right = 32.0
+margin_bottom = 122.0
+rect_scale = Vector2( 0.7, 0.7 )
+
+[node name="Fill" parent="SellButton" index="0"]
+self_modulate = Color( 0.564706, 0.827451, 0.403922, 1 )
+margin_left = 5.0
+margin_right = -3.0
+
+[node name="Label" type="Label" parent="SellButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 3 )
+text = "Sell"
+align = 1
+valign = 1
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="GuiSlider" parent="." instance=ExtResource( 12 )]
+margin_left = 155.337
+margin_top = 121.649
+margin_right = 565.337
+margin_bottom = 165.649
+max_value = 5.0
+ticks_on_borders = true
+
+[node name="Quantity" type="Label" parent="GuiSlider"]
+margin_top = -15.0
+margin_right = 410.0
+margin_bottom = 64.0
+custom_fonts/font = SubResource( 3 )
+text = "0"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[connection signal="pressed" from="SellButton" to="." method="_on_SellButton_pressed"]
+[connection signal="mouse_entered" from="GuiSlider" to="." method="_on_GuiSlider_mouse_entered"]
+[connection signal="mouse_exited" from="GuiSlider" to="." method="_on_GuiSlider_mouse_exited"]
+[connection signal="value_changed" from="GuiSlider" to="." method="_on_GuiSlider_value_changed"]
+
+[editable path="GuiPanel"]
+[editable path="SellButton"]

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/166184__drminky__retro-coin-collect.wav-477c5c2339641a97af2766d7914cfcd5.sample"
+
+[deps]
+
+source_file="res://Test/DropsTest/166184__drminky__retro-coin-collect.wav"
+dest_files=[ "res://.import/166184__drminky__retro-coin-collect.wav-477c5c2339641a97af2766d7914cfcd5.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/lyre3.ogg-c7372598886e3997a6369a8ffb3b400f.oggstr"
+
+[deps]
+
+source_file="res://Scenes/DefaultWorld/Weapons/Lyre/lyre3.ogg"
+dest_files=[ "res://.import/lyre3.ogg-c7372598886e3997a6369a8ffb3b400f.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

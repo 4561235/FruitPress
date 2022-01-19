@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/guitarefail2.ogg-80e295b679bd233ee707c705f60c8503.oggstr"
+
+[deps]
+
+source_file="res://Scenes/DefaultWorld/Weapons/Guitar/guitarefail2.ogg"
+dest_files=[ "res://.import/guitarefail2.ogg-80e295b679bd233ee707c705f60c8503.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

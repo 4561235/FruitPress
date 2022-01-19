@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Test/DropsTest/DropSpawner.gd" type="Script" id=1]
+
+[node name="DropSpawner" type="Node2D"]
+position = Vector2( 351.518, 264.583 )
+script = ExtResource( 1 )
+
+[node name="Position2D" type="Position2D" parent="."]
+position = Vector2( 311.648, 245.722 )

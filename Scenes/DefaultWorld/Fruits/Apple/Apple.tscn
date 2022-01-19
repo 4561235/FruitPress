@@ -1,0 +1,111 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Scenes/DefaultWorld/Fruits/Apple/apple.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/DefaultWorld/Fruits/Apple/Apple.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/DefaultWorld/Fruits/Apple/HpBar/HpBar.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/DefaultWorld/Fruits/Apple/poum2.ogg" type="AudioStream" id=4]
+[ext_resource path="res://Scenes/DefaultWorld/Fruits/Apple/poum1.ogg" type="AudioStream" id=5]
+[ext_resource path="res://Scenes/DefaultWorld/Fruits/Apple/poum3.ogg" type="AudioStream" id=6]
+
+[sub_resource type="Animation" id=1]
+resource_name = "INIT"
+length = 0.3
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprites:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprites:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "Idle"
+length = 0.3
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprites:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 16, 0 ), Vector2( -16, 0 ), Vector2( 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprites:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 19.9696, -20.0, 0.0 ]
+}
+
+[node name="Apple" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Sprites" type="Node2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="Sprites"]
+texture = ExtResource( 1 )
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="HpBar" parent="." instance=ExtResource( 3 )]
+margin_left = 85.081
+margin_top = -56.1267
+margin_right = 106.081
+margin_bottom = 69.8733
+
+[node name="Sounds" type="Node" parent="."]
+
+[node name="Poum1" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 5 )
+volume_db = 24.0
+pitch_scale = 2.0
+
+[node name="Poum2" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 4 )
+volume_db = 24.0
+pitch_scale = 2.0
+
+[node name="Poum3" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 6 )
+volume_db = 24.0
+pitch_scale = 2.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+playback_speed = 0.5
+anims/INIT = SubResource( 1 )
+anims/Idle = SubResource( 2 )
+
+[node name="IdleTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="IdleTimer" to="." method="_on_IdleTimer_timeout"]

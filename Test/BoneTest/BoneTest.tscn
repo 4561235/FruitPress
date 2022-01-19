@@ -1,0 +1,145 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/DefaultWorld/Weapons/Pistol/wingTest.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/DefaultWorld/Weapons/Pistol/pistolTest.png" type="Texture" id=2]
+[ext_resource path="res://Test/BoneTest/BoneTest.gd" type="Script" id=3]
+
+[sub_resource type="Animation" id=1]
+resource_name = "truc"
+length = 3.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body/Wing/Wing2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -56.4827, -22.2305 ), Vector2( -56.4827, -22.2305 ), Vector2( -56.4827, -22.2305 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Body/Wing/Wing2:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 457.201, 391.591, 282.716 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Body/Wing:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -28.9075, -11.419 ), Vector2( -28.9075, -11.419 ), Vector2( -28.9075, -11.419 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Body/Wing:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 630.589, 696.594, 787.417 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Body:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 330.149, 155.512 ), Vector2( 330.149, 219.512 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Body:rotation_degrees")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.151387, 0.151387 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Body/Wing/Wing2/Wing3:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -55.1525, -26.0392 ), Vector2( -55.1525, -26.0392 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Body/Wing/Wing2/Wing3:rotation_degrees")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 57.5953, -42.8287 ]
+}
+
+[node name="BoneTest" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Body" type="Sprite" parent="."]
+position = Vector2( 330.149, 155.512 )
+rotation = 0.0026422
+texture = ExtResource( 2 )
+offset = Vector2( 40, 30 )
+
+[node name="Wing" type="Sprite" parent="Body"]
+position = Vector2( -28.9075, -11.419 )
+rotation = 11.0058
+texture = ExtResource( 1 )
+offset = Vector2( -20, -15 )
+__meta__ = {
+"_edit_ik_": true
+}
+
+[node name="Wing2" type="Sprite" parent="Body/Wing"]
+position = Vector2( -56.4827, -22.2305 )
+rotation = 7.97966
+texture = ExtResource( 1 )
+offset = Vector2( -20, -15 )
+__meta__ = {
+"_edit_bone_": true
+}
+
+[node name="Wing3" type="Sprite" parent="Body/Wing/Wing2"]
+position = Vector2( -55.1525, -26.0392 )
+rotation = 1.00523
+texture = ExtResource( 1 )
+offset = Vector2( -20, -15 )
+__meta__ = {
+"_edit_bone_": true
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/truc = SubResource( 1 )

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/poum3.ogg-7d49fb7ed75c81226daedb80d9ddb7e7.oggstr"
+
+[deps]
+
+source_file="res://Scenes/DefaultWorld/Fruits/Apple/poum3.ogg"
+dest_files=[ "res://.import/poum3.ogg-7d49fb7ed75c81226daedb80d9ddb7e7.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

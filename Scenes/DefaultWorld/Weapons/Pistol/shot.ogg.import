@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/shot.ogg-1875151d8e0c6f7ccaf55c55f5e46a42.oggstr"
+
+[deps]
+
+source_file="res://Scenes/DefaultWorld/Weapons/Pistol/shot.ogg"
+dest_files=[ "res://.import/shot.ogg-1875151d8e0c6f7ccaf55c55f5e46a42.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

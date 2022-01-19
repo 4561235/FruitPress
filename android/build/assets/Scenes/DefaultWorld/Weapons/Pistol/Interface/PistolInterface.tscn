@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scenes/DefaultWorld/Weapons/Pistol/Interface/ButtonPressed.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/DefaultWorld/Weapons/Pistol/Interface/Button.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/DefaultWorld/Weapons/Pistol/Interface/AmmoCharger/AmmoCharger.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/DefaultWorld/Weapons/Pistol/Interface/InterfaceBulletSpawner/InterfaceBulletSpawner.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/DefaultWorld/Weapons/Pistol/Interface/PistolInterface.gd" type="Script" id=5]
+
+[node name="PistolInterface" type="Control"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -99.0
+margin_top = -290.0
+margin_right = 99.0
+margin_bottom = -91.0
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="TextureButton" parent="."]
+margin_right = 196.0
+margin_bottom = 196.0
+texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AmmoCharger" parent="." instance=ExtResource( 3 )]
+position = Vector2( 333.354, 98.419 )
+
+[node name="InterfaceBulletSpawner" parent="." instance=ExtResource( 4 )]
+position = Vector2( 99.8298, -142.866 )
+[connection signal="ammoAdded" from="AmmoCharger" to="." method="_on_AmmoCharger_ammoAdded"]

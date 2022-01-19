@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/DefaultWorld/DefaultWorld.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Main/LeftMenu/LeftMenu.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Main/Main.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/Main/WorldMusics/WorldMusics.tscn" type="PackedScene" id=5]
+
+[node name="Main" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Hud" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="LeftMenu" parent="Hud" instance=ExtResource( 2 )]
+
+[node name="ShopLayer" type="CanvasLayer" parent="."]
+
+[node name="DefaultWorld" parent="." instance=ExtResource( 1 )]
+worldMusicsPath = NodePath("../WorldMusics")
+
+[node name="WorldMusics" parent="." instance=ExtResource( 5 )]
+
+[connection signal="Pressing" from="Hud/LeftMenu" to="." method="_on_LeftMenu_Pressing"]
+[connection signal="Shop" from="Hud/LeftMenu" to="." method="_on_LeftMenu_Shop"]

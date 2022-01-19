@@ -1,0 +1,221 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Node",
+"class": "AdMob",
+"language": "GDScript",
+"path": "res://admob-lib/admob.gd"
+}, {
+"base": "Node",
+"class": "AttackBuff",
+"language": "GDScript",
+"path": "res://Singletons/AttackBuff/AttackBuff.gd"
+}, {
+"base": "Node",
+"class": "AudioPlayer",
+"language": "GDScript",
+"path": "res://CustomNodes/AudioPlayer/AudioPlayer.gd"
+}, {
+"base": "Node2D",
+"class": "Bullet",
+"language": "GDScript",
+"path": "res://Scenes/DefaultWorld/Weapons/Pistol/Bullet/Bullet.gd"
+}, {
+"base": "Tween",
+"class": "CurveTween",
+"language": "GDScript",
+"path": "res://CustomNodes/CurveTween/CurveTween.gd"
+}, {
+"base": "Node2D",
+"class": "DamageLabel",
+"language": "GDScript",
+"path": "res://Scenes/DefaultWorld/Hud/DamageLabel/DamageLabel.gd"
+}, {
+"base": "CanvasLayer",
+"class": "DefaultWorldHud",
+"language": "GDScript",
+"path": "res://Scenes/DefaultWorld/Hud.gd"
+}, {
+"base": "RigidBody2D",
+"class": "Drop",
+"language": "GDScript",
+"path": "res://Test/DropsTest/Drop.gd"
+}, {
+"base": "Timer",
+"class": "ExplodingTimer",
+"language": "GDScript",
+"path": "res://UnusedNodes/JuiceCountBar/ExplodingTimer/ExplodingTimer.gd"
+}, {
+"base": "Node2D",
+"class": "Fox",
+"language": "GDScript",
+"path": "res://Scenes/DefaultWorld/Assistants/Fox/Fox.gd"
+}, {
+"base": "Node2D",
+"class": "Fruit",
+"language": "GDScript",
+"path": "res://Scenes/DefaultWorld/Fruits/Apple/Apple.gd"
+}, {
+"base": "Weapon",
+"class": "Guitar",
+"language": "GDScript",
+"path": "res://Scenes/DefaultWorld/Weapons/Guitar/Guitar.gd"
+}, {
+"base": "TextureButton",
+"class": "GuitarInterfaceButton",
+"language": "GDScript",
+"path": "res://Scenes/DefaultWorld/Weapons/Guitar/Interface/GuitarInterfaceButton/GuitarInterfaceButton.gd"
+}, {
+"base": "Node2D",
+"class": "JuiceBarr",
+"language": "GDScript",
+"path": "res://UnusedNodes/JuiceBarr/JuiceBarr.gd"
+}, {
+"base": "Node2D",
+"class": "JuiceBottle",
+"language": "GDScript",
+"path": "res://Scenes/DefaultWorld/Hud/JuiceBottleManager/JuiceBottle/JuiceBottle.gd"
+}, {
+"base": "Control",
+"class": "JuiceBottleManager",
+"language": "GDScript",
+"path": "res://Scenes/DefaultWorld/Hud/JuiceBottleManager/JuiceBottleManager.gd"
+}, {
+"base": "Node2D",
+"class": "JuiceCountDisplayer",
+"language": "GDScript",
+"path": "res://UnusedNodes/JuiceCountDisplayer/JuiceCountDisplayer.gd"
+}, {
+"base": "Node2D",
+"class": "JuiceGainAnim",
+"language": "GDScript",
+"path": "res://UnusedNodes/JuiceGainAnim/JuiceGainAnim.gd"
+}, {
+"base": "Node2D",
+"class": "MusicNote",
+"language": "GDScript",
+"path": "res://Scenes/DefaultWorld/Weapons/Lyre/Note/MusicNote.gd"
+}, {
+"base": "Node2D",
+"class": "Skull",
+"language": "GDScript",
+"path": "res://Scenes/DefaultWorld/Weapons/Guitar/Skull/Skull.gd"
+}, {
+"base": "Node2D",
+"class": "TargetBoard",
+"language": "GDScript",
+"path": "res://Scenes/DefaultWorld/Weapons/Pistol/TargetBoard/TargetBoard.gd"
+}, {
+"base": "Node2D",
+"class": "Weapon",
+"language": "GDScript",
+"path": "res://Scenes/DefaultWorld/Weapons/WeaponInterface.gd"
+} ]
+_global_script_class_icons={
+"AdMob": "res://admob-lib/icon.png",
+"AttackBuff": "",
+"AudioPlayer": "",
+"Bullet": "",
+"CurveTween": "",
+"DamageLabel": "",
+"DefaultWorldHud": "",
+"Drop": "",
+"ExplodingTimer": "",
+"Fox": "",
+"Fruit": "",
+"Guitar": "",
+"GuitarInterfaceButton": "",
+"JuiceBarr": "",
+"JuiceBottle": "",
+"JuiceBottleManager": "",
+"JuiceCountDisplayer": "",
+"JuiceGainAnim": "",
+"MusicNote": "",
+"Skull": "",
+"TargetBoard": "",
+"Weapon": ""
+}
+
+[application]
+
+config/name="FruitPress"
+run/main_scene="res://Scenes/Main/Main.tscn"
+config/icon="res://icon.png"
+
+[autoload]
+
+Enums="*res://Autoload Singletons/Enums/Enums.tscn"
+GameData="*res://Autoload Singletons/GameData/GameData.tscn"
+GameStats="*res://Autoload Singletons/GameStats/GameStats.gd"
+TemporarySave="*res://Autoload Singletons/TemporarySave/TemporarySave.tscn"
+
+[debug]
+
+gdscript/warnings/shadowed_variable=false
+gdscript/warnings/unused_class_variable=true
+
+[display]
+
+window/size/width=720
+window/size/height=1270
+window/size/resizable=false
+window/size/borderless=true
+window/size/fullscreen=true
+window/handheld/orientation="portrait"
+window/stretch/mode="2d"
+window/stretch/aspect="keep_width"
+
+[global]
+
+and=false
+3.3=false
+
+[importer_defaults]
+
+ogg_vorbis={
+"loop": false,
+"loop_offset": 0
+}
+texture={
+"compress/bptc_ldr": 0,
+"compress/hdr_mode": 0,
+"compress/lossy_quality": 0.7,
+"compress/mode": 0,
+"compress/normal_map": 0,
+"detect_3d": false,
+"flags/anisotropic": true,
+"flags/filter": true,
+"flags/mipmaps": true,
+"flags/repeat": 0,
+"flags/srgb": 2,
+"process/HDR_as_SRGB": false,
+"process/fix_alpha_border": true,
+"process/invert_color": false,
+"process/premult_alpha": false,
+"size_limit": 0,
+"stream": false,
+"svg/scale": 1.0
+}
+
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
+
+[rendering]
+
+quality/intended_usage/framebuffer_allocation=0
+quality/intended_usage/framebuffer_allocation.mobile=0
+vram_compression/import_etc=true
+quality/filters/use_nearest_mipmap_filter=true
+
+[window]
+
+intended_usage/framebuffer_allocation=false

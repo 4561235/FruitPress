@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/DefaultWorld/Weapons/Lyre/Interface/Buttons/Button1.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/DefaultWorld/Weapons/Lyre/Interface/Buttons/Button1Pressed.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/DefaultWorld/Weapons/Lyre/Interface/Buttons/LyreButton.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/DefaultWorld/Weapons/Lyre/Interface/UltiAnim/UltiAnim.tscn" type="PackedScene" id=4]
+
+[node name="LyreButton" type="TextureButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -524.0
+margin_bottom = -1084.0
+texture_normal = ExtResource( 1 )
+texture_pressed = ExtResource( 2 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UltiAnim" parent="." instance=ExtResource( 4 )]
+position = Vector2( 99.5895, 97.4706 )
+emitting = false
+amount = 100
+lifetime = 1.0
+one_shot = true
+speed_scale = 1.0
+explosiveness = 1.0

@@ -1,0 +1,89 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Scenes/Backgrounds/TexturedBackground/TexturedBackground.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Fonts/m5x7.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://GUI/GuiPanel/GuiPanel.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Shop/SellShop/SellShop.gd" type="Script" id=5]
+[ext_resource path="res://Scenes/Shop/SellShop/SellShopItem/SellShopItem.tscn" type="PackedScene" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+size = 155
+outline_size = 7
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 3 )
+
+[node name="SellShop" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TexturedBackground" parent="." instance=ExtResource( 2 )]
+
+[node name="ShopTitle" parent="." instance=ExtResource( 4 )]
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.0
+margin_left = -240.5
+margin_right = 240.5
+margin_bottom = 208.0
+
+[node name="Fill" parent="ShopTitle" index="0"]
+self_modulate = Color( 0.054902, 0, 1, 1 )
+
+[node name="Label" type="Label" parent="ShopTitle"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 1 )
+text = "SELL"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="ItemsContainer" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -293.5
+margin_top = 254.0
+margin_right = 293.5
+margin_bottom = 1160.0
+custom_constants/separation = 30
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Apple" parent="ItemsContainer" instance=ExtResource( 6 )]
+
+[node name="Plum" parent="ItemsContainer" instance=ExtResource( 6 )]
+margin_top = 234.0
+margin_bottom = 438.0
+title = "Plum"
+fruit = 1
+
+[node name="Kiwi" parent="ItemsContainer" instance=ExtResource( 6 )]
+margin_top = 468.0
+margin_bottom = 672.0
+title = "Kiwi"
+fruit = 2
+
+[node name="Banana" parent="ItemsContainer" instance=ExtResource( 6 )]
+margin_top = 702.0
+margin_bottom = 906.0
+title = "Banana"
+fruit = 3
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="ItemsContainer"]
+position = Vector2( 0.533664, 453.997 )
+scale = Vector2( 0.535055, 25.1285 )
+
+[node name="Tween" type="Tween" parent="."]
+
+[connection signal="draw" from="." to="." method="_on_SellShop_draw"]
+[connection signal="screen_exited" from="ItemsContainer/VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
+
+[editable path="ShopTitle"]

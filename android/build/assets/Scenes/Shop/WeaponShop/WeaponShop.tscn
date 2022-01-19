@@ -1,0 +1,126 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Fonts/m5x7.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Scenes/Backgrounds/TexturedBackground/TexturedBackground.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Shop/WeaponShop/WeaponShopItem/WeaponShopItem.tscn" type="PackedScene" id=3]
+[ext_resource path="res://GUI/GuiPanel/GuiPanel.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Shop/WeaponShop/WeaponShop.gd" type="Script" id=5]
+[ext_resource path="res://Scenes/Backgrounds/TexturedBackground/hammerShadow.png" type="Texture" id=6]
+[ext_resource path="res://Scenes/DefaultWorld/Weapons/Hammer/hammer.png" type="Texture" id=7]
+[ext_resource path="res://Scenes/DefaultWorld/Weapons/Lyre/lyre.png" type="Texture" id=8]
+[ext_resource path="res://Scenes/DefaultWorld/Weapons/Pistol/pistolRef.png" type="Texture" id=9]
+
+[sub_resource type="DynamicFont" id=1]
+size = 155
+outline_size = 7
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[node name="WeaponShop" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TexturedBackground" parent="." instance=ExtResource( 2 )]
+
+[node name="Background" parent="TexturedBackground" index="0"]
+color = Color( 0.921569, 0.176471, 0.262745, 1 )
+
+[node name="Sprite" parent="TexturedBackground" index="1"]
+texture = ExtResource( 6 )
+
+[node name="ShopTitle" parent="." instance=ExtResource( 4 )]
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.0
+margin_left = -240.5
+margin_right = 240.5
+margin_bottom = 208.0
+
+[node name="Fill" parent="ShopTitle" index="0"]
+self_modulate = Color( 1, 0, 0, 1 )
+
+[node name="Label" type="Label" parent="ShopTitle"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 1 )
+text = "WEAPONS"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="ItemsContainer" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -293.0
+margin_top = 264.0
+margin_right = 293.0
+margin_bottom = 1879.0
+rect_min_size = Vector2( 537, 693 )
+mouse_filter = 2
+custom_constants/separation = 30
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Guitar" parent="ItemsContainer" instance=ExtResource( 3 )]
+title = "Guitar"
+color = Color( 0.831373, 0, 0, 1 )
+
+[node name="Hammer" parent="ItemsContainer" instance=ExtResource( 3 )]
+margin_top = 235.0
+margin_bottom = 440.0
+texture = ExtResource( 7 )
+title = "Hammer"
+color = Color( 0.6, 0.333333, 1, 1 )
+
+[node name="Lyre" parent="ItemsContainer" instance=ExtResource( 3 )]
+margin_top = 470.0
+margin_bottom = 675.0
+texture = ExtResource( 8 )
+title = "Lyre"
+color = Color( 0.34902, 0.870588, 1, 1 )
+
+[node name="Pistol" parent="ItemsContainer" instance=ExtResource( 3 )]
+margin_top = 705.0
+margin_bottom = 910.0
+texture = ExtResource( 9 )
+title = "Pistol"
+color = Color( 0.92549, 0.8, 0.309804, 1 )
+
+[node name="Computer" parent="ItemsContainer" instance=ExtResource( 3 )]
+margin_top = 940.0
+margin_bottom = 1145.0
+title = "Computer"
+color = Color( 0.180392, 0.929412, 0.823529, 1 )
+
+[node name="Weapon1" parent="ItemsContainer" instance=ExtResource( 3 )]
+margin_top = 1175.0
+margin_bottom = 1380.0
+title = "Weapon"
+color = Color( 1, 0.54902, 0.0705882, 1 )
+
+[node name="Weapon2" parent="ItemsContainer" instance=ExtResource( 3 )]
+margin_top = 1410.0
+margin_bottom = 1615.0
+title = "Weapon"
+color = Color( 0.0901961, 0.6, 0.0588235, 1 )
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="ItemsContainer"]
+position = Vector2( 10.5758, 796.089 )
+rotation = 3.14159
+scale = Vector2( 0.594179, -58.7592 )
+
+[node name="Tween" type="Tween" parent="."]
+
+[connection signal="draw" from="." to="." method="_on_WeaponShop_draw"]
+[connection signal="screen_exited" from="ItemsContainer/VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
+
+[editable path="TexturedBackground"]
+[editable path="ShopTitle"]

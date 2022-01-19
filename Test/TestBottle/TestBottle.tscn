@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scenes/DefaultWorld/Hud/JuiceBottleManager/JuiceBottleManager.tscn" type="PackedScene" id=1]
+
+[node name="TestBottle" type="CanvasLayer"]
+layer = 0
+
+[node name="JuiceBottleManager" parent="." instance=ExtResource( 1 )]
+margin_left = -40.0
+margin_right = -40.0

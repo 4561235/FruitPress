@@ -1,0 +1,75 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scenes/DefaultWorld/Weapons/Guitar/Interface/GuitarInterfaceButton/guitar_button_pressed.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/DefaultWorld/Weapons/Guitar/Interface/GuitarInterfaceButton/guitar_button_normal.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/DefaultWorld/Weapons/Guitar/Interface/GuitarInterface.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/DefaultWorld/Weapons/Guitar/Interface/GuitarInterfaceButton/cord_paths.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/DefaultWorld/Weapons/Guitar/Interface/GuitarComboJauge/GuitarComboJauge.tscn" type="PackedScene" id=5]
+
+[node name="GuitarInterface" type="Control"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -99.0
+margin_top = -290.0
+margin_right = 99.0
+margin_bottom = -91.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Button" type="TextureButton" parent="."]
+visible = false
+margin_right = 203.0
+margin_bottom = 198.0
+texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GuitarComboJauge" parent="." instance=ExtResource( 5 )]
+position = Vector2( 15.1361, -304.405 )
+
+[node name="Cords" type="Sprite" parent="."]
+position = Vector2( 18.2463, -86.485 )
+scale = Vector2( 4.50826, 1 )
+texture = ExtResource( 4 )
+
+[node name="Cords2" type="Sprite" parent="."]
+position = Vector2( 10.9308, 97.515 )
+scale = Vector2( 4.46282, 1 )
+texture = ExtResource( 4 )
+
+[node name="Spawner1" type="Position2D" parent="."]
+position = Vector2( -546.584, -86.485 )
+
+[node name="Spawner2" type="Position2D" parent="."]
+position = Vector2( -546.584, 97.515 )
+
+[node name="TimerSpawn" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[node name="Label" type="Label" parent="."]
+visible = false
+margin_left = 317.142
+margin_top = -188.775
+margin_right = 357.142
+margin_bottom = -174.775
+text = "SPEED"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DespawnPosition" type="Position2D" parent="."]
+position = Vector2( 509.424, -181.295 )
+
+[connection signal="blueBuffActivated" from="GuitarComboJauge" to="." method="_on_GuitarComboJauge_blueBuffActivated"]
+[connection signal="greenBuffActivated" from="GuitarComboJauge" to="." method="_on_GuitarComboJauge_greenBuffActivated"]
+[connection signal="noBuffActivated" from="GuitarComboJauge" to="." method="_on_GuitarComboJauge_noBuffActivated"]
+[connection signal="redBuffActivated" from="GuitarComboJauge" to="." method="_on_GuitarComboJauge_redBuffActivated"]
+[connection signal="timeout" from="TimerSpawn" to="." method="_on_TimerSpawn_timeout"]

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Valentine-Quest__-Upbeat-Romantic-8-Bit-Game-Music-by-HeatleyBros.ogg-feb2763841beadca5fcc56044a0d8890.oggstr"
+
+[deps]
+
+source_file="res://Musics/Valentine-Quest__-Upbeat-Romantic-8-Bit-Game-Music-by-HeatleyBros.ogg"
+dest_files=[ "res://.import/Valentine-Quest__-Upbeat-Romantic-8-Bit-Game-Music-by-HeatleyBros.ogg-feb2763841beadca5fcc56044a0d8890.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

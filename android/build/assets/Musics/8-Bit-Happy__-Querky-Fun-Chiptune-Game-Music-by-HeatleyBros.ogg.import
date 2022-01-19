@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/8-Bit-Happy__-Querky-Fun-Chiptune-Game-Music-by-HeatleyBros.ogg-3fe3532f8c25c8b20b9792e74b29265b.oggstr"
+
+[deps]
+
+source_file="res://Musics/8-Bit-Happy__-Querky-Fun-Chiptune-Game-Music-by-HeatleyBros.ogg"
+dest_files=[ "res://.import/8-Bit-Happy__-Querky-Fun-Chiptune-Game-Music-by-HeatleyBros.ogg-3fe3532f8c25c8b20b9792e74b29265b.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

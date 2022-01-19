@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/DefaultWorld/Hud/ChangeWeaponButton/change_weapon_normal.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/DefaultWorld/Hud/ChangeWeaponButton/change_weapon_pressed.png" type="Texture" id=2]
+
+[node name="ChangeWeaponButton" type="TextureButton"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 16.0
+margin_top = -114.0
+margin_right = 114.0
+margin_bottom = -16.0
+rect_rotation = 360.0
+focus_mode = 0
+mouse_filter = 1
+enabled_focus_mode = 0
+texture_normal = ExtResource( 1 )
+texture_pressed = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

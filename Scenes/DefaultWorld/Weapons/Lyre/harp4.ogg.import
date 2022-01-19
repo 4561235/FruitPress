@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/harp4.ogg-9e0f96b0f98c5ff0b687ddad55f03d80.oggstr"
+
+[deps]
+
+source_file="res://Scenes/DefaultWorld/Weapons/Lyre/harp4.ogg"
+dest_files=[ "res://.import/harp4.ogg-9e0f96b0f98c5ff0b687ddad55f03d80.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

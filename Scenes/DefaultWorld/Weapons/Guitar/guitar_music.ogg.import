@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/guitar_music.ogg-c52b9be792795cf7a448766a8fbfdbcc.oggstr"
+
+[deps]
+
+source_file="res://Scenes/DefaultWorld/Weapons/Guitar/guitar_music.ogg"
+dest_files=[ "res://.import/guitar_music.ogg-c52b9be792795cf7a448766a8fbfdbcc.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

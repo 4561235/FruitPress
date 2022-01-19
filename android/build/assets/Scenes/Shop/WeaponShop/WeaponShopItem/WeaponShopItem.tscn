@@ -1,0 +1,150 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Fonts/m5x7.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Scenes/DefaultWorld/Weapons/Guitar/guitar.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/Main/LeftMenu/left_menu_green_button_normal.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/Main/LeftMenu/left_menu_green_button_pressed.png" type="Texture" id=4]
+[ext_resource path="res://GUI/GuiPanel/GuiPanel.tscn" type="PackedScene" id=5]
+[ext_resource path="res://GUI/GuiButton/GuiButton.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Shop/WeaponShop/WeaponShopItem/coin.png" type="Texture" id=7]
+[ext_resource path="res://Scenes/Shop/WeaponShop/WeaponShopItem/WeaponShopItem.gd" type="Script" id=8]
+
+[sub_resource type="DynamicFont" id=1]
+size = 90
+outline_size = 4
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 70
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[node name="WeaponShopItem" type="Control"]
+margin_right = 586.0
+margin_bottom = 205.0
+rect_min_size = Vector2( 586, 205 )
+mouse_filter = 2
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GuiPanel" parent="." instance=ExtResource( 5 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 583.0
+margin_bottom = 203.0
+
+[node name="Fill" parent="GuiPanel" index="0"]
+self_modulate = Color( 1, 1, 1, 1 )
+margin_left = 5.0
+margin_right = -3.0
+
+[node name="ItemTitle" type="Label" parent="GuiPanel"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -467.216
+margin_top = -4.4054
+margin_right = -187.216
+margin_bottom = 114.595
+custom_fonts/font = SubResource( 1 )
+text = "GUITAR"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="ItemTexture" type="Sprite" parent="GuiPanel"]
+position = Vector2( 64.3469, 101.117 )
+scale = Vector2( 0.35, 0.35 )
+texture = ExtResource( 2 )
+
+[node name="Price" type="Label" parent="GuiPanel"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -469.216
+margin_top = 75.5946
+margin_right = -357.216
+margin_bottom = 189.595
+custom_fonts/font = SubResource( 2 )
+text = "200"
+align = 2
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Sprite" type="Sprite" parent="GuiPanel/Price"]
+position = Vector2( 144.489, 60.0549 )
+texture = ExtResource( 7 )
+
+[node name="BuyButton" type="TouchScreenButton" parent="GuiPanel"]
+visible = false
+position = Vector2( 355.576, 99.5956 )
+scale = Vector2( 0.7, 0.7 )
+normal = ExtResource( 3 )
+pressed = ExtResource( 4 )
+
+[node name="BuyButton" parent="." instance=ExtResource( 6 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 398.808
+margin_top = 106.066
+margin_right = 621.808
+margin_bottom = 204.066
+rect_scale = Vector2( 0.7, 0.7 )
+
+[node name="Fill" parent="BuyButton" index="0"]
+self_modulate = Color( 0.564706, 0.827451, 0.403922, 1 )
+margin_left = 7.0
+margin_top = 7.0
+margin_right = -8.00003
+margin_bottom = -9.0
+
+[node name="Label" type="Label" parent="BuyButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 1 )
+text = "BUY"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="MoreInfoButton" parent="." instance=ExtResource( 6 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 398.808
+margin_top = 26.066
+margin_right = 621.808
+margin_bottom = 124.066
+rect_scale = Vector2( 0.7, 0.7 )
+
+[node name="Fill" parent="MoreInfoButton" index="0"]
+self_modulate = Color( 0.658824, 0.298039, 0.803922, 1 )
+margin_left = 7.0
+margin_top = 7.0
+margin_right = -8.00003
+margin_bottom = -9.0
+
+[node name="Label" type="Label" parent="MoreInfoButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 1 )
+text = "INFO"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[editable path="GuiPanel"]
+[editable path="BuyButton"]
+[editable path="MoreInfoButton"]

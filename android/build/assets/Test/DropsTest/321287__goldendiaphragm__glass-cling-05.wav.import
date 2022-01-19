@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/321287__goldendiaphragm__glass-cling-05.wav-f14814c23de1b5f0e8b5352e4564121c.sample"
+
+[deps]
+
+source_file="res://Test/DropsTest/321287__goldendiaphragm__glass-cling-05.wav"
+dest_files=[ "res://.import/321287__goldendiaphragm__glass-cling-05.wav-f14814c23de1b5f0e8b5352e4564121c.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

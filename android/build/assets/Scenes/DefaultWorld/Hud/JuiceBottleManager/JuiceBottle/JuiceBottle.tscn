@@ -1,0 +1,66 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Scenes/DefaultWorld/Hud/JuiceBottleManager/JuiceBottle/bottleProgress.png" type="Texture" id=1]
+[ext_resource path="res://Fonts/m5x7.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Scenes/DefaultWorld/Hud/JuiceBottleManager/JuiceBottle/bottle.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/DefaultWorld/Hud/JuiceBottleManager/JuiceBottle/JuiceBottle.gd" type="Script" id=4]
+[ext_resource path="res://Scenes/DefaultWorld/Hud/JuiceDropsManager/Drop/166184__drminky__retro-coin-collect.wav" type="AudioStream" id=5]
+[ext_resource path="res://Scenes/DefaultWorld/Fruits/Apple/apple.png" type="Texture" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+size = 75
+outline_size = 4
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[node name="JuiceBottle" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="TextureProgress" type="TextureProgress" parent="."]
+margin_left = -32.0
+margin_top = -94.0
+margin_right = 33.0
+margin_bottom = 63.0
+value = 30.0
+texture_under = ExtResource( 1 )
+texture_over = ExtResource( 3 )
+texture_progress = ExtResource( 1 )
+fill_mode = 3
+tint_under = Color( 1, 1, 1, 0.6 )
+tint_progress = Color( 0.541176, 0.254902, 0.92549, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DespawnTimer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = 45.2319
+margin_top = -68.8157
+margin_right = 360.232
+margin_bottom = 50.1843
+custom_fonts/font = SubResource( 1 )
+text = "0"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+volume_db = -5.0
+
+[node name="FruitSprite" type="Sprite" parent="."]
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 6 )
+
+[node name="Tween" type="Tween" parent="."]
+[connection signal="timeout" from="DespawnTimer" to="." method="_on_DespawnTimer_timeout"]
